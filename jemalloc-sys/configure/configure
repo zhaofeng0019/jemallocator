@@ -13297,8 +13297,8 @@ fi
 
 
 
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise(2) is compilable" >&5
-$as_echo_n "checking whether madvise(2) is compilable... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise_fake(2) is compilable" >&5
+$as_echo_n "checking whether madvise_fake(2) is compilable... " >&6; }
 if ${je_cv_madvise+:} false; then :
   $as_echo_n "(cached) " >&6
 else
@@ -13311,7 +13311,7 @@ int
 main ()
 {
 
-	madvise((void *)0, 0, 0);
+	madvise_fake((void *)0, 0, 0);
 
   ;
   return 0;
@@ -13334,8 +13334,8 @@ $as_echo "#define JEMALLOC_HAVE_MADVISE  " >>confdefs.h
 
 
 
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise(..., MADV_FREE) is compilable" >&5
-$as_echo_n "checking whether madvise(..., MADV_FREE) is compilable... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise_fake(..., MADV_FREE) is compilable" >&5
+$as_echo_n "checking whether madvise_fake(..., MADV_FREE) is compilable... " >&6; }
 if ${je_cv_madv_free+:} false; then :
   $as_echo_n "(cached) " >&6
 else
@@ -13348,7 +13348,7 @@ int
 main ()
 {
 
-	madvise((void *)0, 0, MADV_FREE);
+	madvise_fake((void *)0, 0, MADV_FREE);
 
   ;
   return 0;
@@ -13385,8 +13385,8 @@ $as_echo "#define JEMALLOC_DEFINE_MADVISE_FREE  " >>confdefs.h
   fi
 
 
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise(..., MADV_DONTNEED) is compilable" >&5
-$as_echo_n "checking whether madvise(..., MADV_DONTNEED) is compilable... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise_fake(..., MADV_DONTNEED) is compilable" >&5
+$as_echo_n "checking whether madvise_fake(..., MADV_DONTNEED) is compilable... " >&6; }
 if ${je_cv_madv_dontneed+:} false; then :
   $as_echo_n "(cached) " >&6
 else
@@ -13399,7 +13399,7 @@ int
 main ()
 {
 
-	madvise((void *)0, 0, MADV_DONTNEED);
+	madvise_fake((void *)0, 0, MADV_DONTNEED);
 
   ;
   return 0;
@@ -13423,8 +13423,8 @@ $as_echo "#define JEMALLOC_PURGE_MADVISE_DONTNEED  " >>confdefs.h
   fi
 
 
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise(..., MADV_DO[NT]DUMP) is compilable" >&5
-$as_echo_n "checking whether madvise(..., MADV_DO[NT]DUMP) is compilable... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise_fake(..., MADV_DO[NT]DUMP) is compilable" >&5
+$as_echo_n "checking whether madvise_fake(..., MADV_DO[NT]DUMP) is compilable... " >&6; }
 if ${je_cv_madv_dontdump+:} false; then :
   $as_echo_n "(cached) " >&6
 else
@@ -13437,8 +13437,8 @@ int
 main ()
 {
 
-	madvise((void *)0, 0, MADV_DONTDUMP);
-	madvise((void *)0, 0, MADV_DODUMP);
+	madvise_fake((void *)0, 0, MADV_DONTDUMP);
+	madvise_fake((void *)0, 0, MADV_DODUMP);
 
   ;
   return 0;
@@ -13462,8 +13462,8 @@ $as_echo "#define JEMALLOC_MADVISE_DONTDUMP  " >>confdefs.h
   fi
 
 
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise(..., MADV_[NO]HUGEPAGE) is compilable" >&5
-$as_echo_n "checking whether madvise(..., MADV_[NO]HUGEPAGE) is compilable... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise_fake(..., MADV_[NO]HUGEPAGE) is compilable" >&5
+$as_echo_n "checking whether madvise_fake(..., MADV_[NO]HUGEPAGE) is compilable... " >&6; }
 if ${je_cv_thp+:} false; then :
   $as_echo_n "(cached) " >&6
 else
@@ -13476,8 +13476,8 @@ int
 main ()
 {
 
-	madvise((void *)0, 0, MADV_HUGEPAGE);
-	madvise((void *)0, 0, MADV_NOHUGEPAGE);
+	madvise_fake((void *)0, 0, MADV_HUGEPAGE);
+	madvise_fake((void *)0, 0, MADV_NOHUGEPAGE);
 
   ;
   return 0;
@@ -13495,8 +13495,8 @@ fi
 $as_echo "$je_cv_thp" >&6; }
 
 
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise(..., MADV_[NO]CORE) is compilable" >&5
-$as_echo_n "checking whether madvise(..., MADV_[NO]CORE) is compilable... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether madvise_fake(..., MADV_[NO]CORE) is compilable" >&5
+$as_echo_n "checking whether madvise_fake(..., MADV_[NO]CORE) is compilable... " >&6; }
 if ${je_cv_madv_nocore+:} false; then :
   $as_echo_n "(cached) " >&6
 else
@@ -13509,8 +13509,8 @@ int
 main ()
 {
 
-	madvise((void *)0, 0, MADV_NOCORE);
-	madvise((void *)0, 0, MADV_CORE);
+	madvise_fake((void *)0, 0, MADV_NOCORE);
+	madvise_fake((void *)0, 0, MADV_CORE);
 
   ;
   return 0;
@@ -13559,7 +13559,7 @@ int
 main ()
 {
 
-    posix_madvise((void *)0, 0, 0);
+    posix_madvise_fake((void *)0, 0, 0);
 
   ;
   return 0;
@@ -13582,8 +13582,8 @@ $as_echo "#define JEMALLOC_HAVE_POSIX_MADVISE  " >>confdefs.h
 
 
 
-{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether posix_madvise(..., POSIX_MADV_DONTNEED) is compilable" >&5
-$as_echo_n "checking whether posix_madvise(..., POSIX_MADV_DONTNEED) is compilable... " >&6; }
+{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether posix_madvise_fake(..., POSIX_MADV_DONTNEED) is compilable" >&5
+$as_echo_n "checking whether posix_madvise_fake(..., POSIX_MADV_DONTNEED) is compilable... " >&6; }
 if ${je_cv_posix_madv_dontneed+:} false; then :
   $as_echo_n "(cached) " >&6
 else
@@ -13596,7 +13596,7 @@ int
 main ()
 {
 
-    posix_madvise((void *)0, 0, POSIX_MADV_DONTNEED);
+    posix_madvise_fake((void *)0, 0, POSIX_MADV_DONTNEED);
 
   ;
   return 0;
